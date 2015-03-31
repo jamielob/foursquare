@@ -1,8 +1,8 @@
 Package.describe({
   name: 'oleh:foursquare',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'Meteor package for searching places with Foursquare API',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/OlehZymnytskiy/foursquare.git',
   // By default, Meteor will default to using README.md for documentation.
@@ -13,6 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.0.5');
 
+  api.use('underscore');
   api.use('http');
 
   api.addFiles('foursquare-client.js', 'client');
