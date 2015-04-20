@@ -17,7 +17,15 @@ Meteor.methods({
   'foursquare-search': function(config) {
     check(config, Object);
     check(config.query, String);
-    check(config.ll, String);
+    
+    if (!config.ll && !config.near) {
+      var errorMessage = "Foursqaure Error: Please specify either 'll' or 'near' in your params";
+      console.log(errorMessage);
+      throw new Meteor.Error(errorMessage);
+    }
+
+    if (config.ll) check(config.ll, String);
+    if (config.near) check(config.near, String);
 
     if(fs_config.authOnly && !this.userId)
       throw new Meteor.Error('Permission denied');
