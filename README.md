@@ -1,4 +1,4 @@
-Server:
+#Server:
 
 ```
 Foursquare.init({
@@ -8,11 +8,22 @@ Foursquare.init({
 });
 ```
 
-Client:
+#Client:
 
 ```
 Foursquare.find(params, function(error, result) {
   // your callback
+});
+```
+
+For example:
+
+```
+var params = {};
+params.query = 'Nopalito';
+params.near = 'San Francisco, CA';
+Foursquare.find(params, function(error, result) {
+  console.log(result);
 });
 ```
 
