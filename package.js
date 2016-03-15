@@ -15,6 +15,7 @@ Package.onUse(function(api) {
 
   api.use('underscore');
   api.use('http');
+  api.use('check');
 
   api.addFiles('foursquare-client.js', 'client');
   api.addFiles('foursquare-server.js', 'server');
