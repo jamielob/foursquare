@@ -38,7 +38,6 @@ Meteor.methods({
 
     _.extend(config, query);
 
-    console.log(query);
 
     try {
       result = HTTP.get('https://api.foursquare.com/v2/venues/search', {
